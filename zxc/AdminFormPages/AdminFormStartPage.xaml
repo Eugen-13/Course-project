@@ -1,0 +1,19 @@
+﻿<Page x:Class="zxc.AdminFormPages.AdminFormStartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:zxc.AdminFormPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="630"
+      Title="AdminFormStartPage">
+
+    <Grid>
+        <Label FontSize="50"
+               Style="{StaticResource CustomFont2}"
+               Opacity="0.6"
+               Foreground="White"
+               HorizontalContentAlignment="Center"
+               Content="Выберите какой-нибудь &#xD;               пункт меню" VerticalAlignment="Center"/>
+    </Grid>
+</Page>

@@ -1,0 +1,127 @@
+﻿<Page x:Class="zxc.AdminFormPages.AdminPageProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:zxc.AdminFormPages"
+       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="630"
+      Title="AdminPageProfile">
+    <Border>
+        <Grid x:Name="grid">
+            <iconPacks:PackIconMaterial Margin="100,50,0,0" Kind="Account" Foreground="Red" Width="100" Height="100"/>
+            <StackPanel Height="150" VerticalAlignment="Top" Margin="120,50,0,0" Width="315">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Email: " Style="{StaticResource Style2}"></Label>
+                    <StackPanel Margin="0,0,0,0">
+                        <TextBox MaxLength="50"
+                            Text="{Binding Email, Mode=OneWay}" x:Name="email" Style="{StaticResource Style1}" Margin="0,5,0,0"/>
+                        <Border HorizontalAlignment="Left" Margin="0,0,0,0" Width="250"
+                        Height="2" 
+                        Background="White"
+                        Opacity="0.5"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Login: " Style="{StaticResource Style2}"></Label>
+                    <StackPanel>
+                        <TextBox  Text="{Binding Login, Mode=OneWay}" x:Name="login" Style="{StaticResource Style1}" Margin="0,5,0,0"/>
+                        <Border HorizontalAlignment="Left" Margin="0,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Password: " Style="{StaticResource Style2}"></Label>
+                    <StackPanel>
+                        <TextBox  Text="{Binding Password, Mode=OneWay}" x:Name="pass" Style="{StaticResource Style1}" Margin="0,5,0,0"/>
+                        <Border HorizontalAlignment="Left" Margin="0,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,180,0,80">
+                <StackPanel Width="315" Margin="10,20,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Фамилия: " Style="{StaticResource Style2}"></Label>
+                        <StackPanel>
+                            <TextBox  Text="{Binding Surname, Mode=OneWay}" x:Name="surname" Style="{StaticResource Style1}" Margin="0,5,0,0"/>
+                            <Border HorizontalAlignment="Left" Margin="0,0,0,0" Width="200"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Имя: " Style="{StaticResource Style2}"></Label>
+                        <StackPanel>
+                            <TextBox  Text="{Binding Name, Mode=OneWay}" x:Name="name" Style="{StaticResource Style1}" Margin="0,5,0,0"/>
+                            <Border HorizontalAlignment="Left" Margin="0,0,0,0" Width="200"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Отчество: " Style="{StaticResource Style2}"></Label>
+                        <StackPanel>
+                            <TextBox  Text="{Binding SecondaryName, Mode=OneWay}" x:Name="SName" Style="{StaticResource Style1}" Margin="0,5,0,0"/>
+                            <Border HorizontalAlignment="Left" Margin="0,0,0,0" Width="200"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Width="315" Margin="10,20,0,0">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Дата: " Style="{StaticResource Style2}"></Label>
+                        <StackPanel>
+                            <TextBox  Text="{Binding Date, Mode=OneWay}" x:Name="date" Style="{StaticResource Style1}" Margin="0,5,0,0"/>
+                            <Border HorizontalAlignment="Left" Margin="0,0,0,0" Width="200"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Тел: " Style="{StaticResource Style2}"></Label>
+                        <StackPanel>
+                            <TextBox  Text="{Binding Telephone, Mode=OneWay}" x:Name="tel" Style="{StaticResource Style1}" Margin="0,5,0,0"/>
+                            <Border HorizontalAlignment="Left" Margin="0,0,0,0" Width="200"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Адрес: " Style="{StaticResource Style2}"></Label>
+                        <StackPanel>
+                            <TextBox  Text="{Binding Adres, Mode=OneWay}" x:Name="adres" Style="{StaticResource Style1}" Margin="0,5,0,0"/>
+                            <Border HorizontalAlignment="Left" Margin="0,0,0,0" Width="200"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,310,50,10" Orientation="Horizontal">
+                <Button Style="{StaticResource RoundButton}"
+                            FontStyle="Normal" 
+                            Foreground="White" BorderThickness="2"
+                            BorderBrush="White" Width="100"
+                            Height="40" Content="Save" FontWeight="Normal" FontFamily="Segoe UI" FontSize="20" Click="Button_Click"/>
+                <Button Style="{StaticResource RoundButton}"
+                            FontStyle="Normal" Margin="100,0,0,0"
+                            Foreground="White" BorderThickness="2"
+                            BorderBrush="White" Width="100"
+                            Height="40" Content="Cancel" FontWeight="Normal" FontFamily="Segoe UI" FontSize="20" Click="Button_Click_1"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

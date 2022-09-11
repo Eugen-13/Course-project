@@ -1,0 +1,30 @@
+﻿<Window x:Class="zxc.Dialogs.Help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zxc.Dialogs"
+        mc:Ignorable="d"
+        Title="ProfileDialog" Height="300" Width="500"
+         Background="Transparent"
+        ResizeMode="NoResize" AllowsTransparency="True" 
+        WindowStyle="None" WindowStartupLocation="CenterScreen" PreviewKeyDown="Window_PreviewKeyDown">
+    <Border CornerRadius="20" BorderThickness="1" BorderBrush="Red">
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#1C1C1C" Offset="0.0"/>
+                <GradientStop Color="#000000" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Label Style="{StaticResource CustomFont2}" Content="Данное приложение было разработано учащимся &#xA; 45-ой группы Соловьёвым Евгением Игоревичем&#xA;для курсового проекта по учебной дисциплине: &#xA; КПиЯП.&#xA; В данной приложении присудствует учётные &#xA; записи администратора и пользователя в которых &#xA; реализованы функции работы с БД и печати. &#xA; А так же экспорт в программное обемпечение  &#xA; Microsft Word и Microsoft Excel" 
+                   HorizontalAlignment="Center" Margin="0,30,0,50"
+                   FontSize="20" Foreground="White" Name="qwe"/>
+            <Button Style="{StaticResource RoundButton}"
+                            FontStyle="Normal" IsDefault="True"
+                            Foreground="White" BorderThickness="2"
+                            BorderBrush="White" Width="100"
+                            Height="40" Content="OK" FontWeight="Normal" FontFamily="Segoe UI" FontSize="20" Margin="199,248,199,10" Click="Help1"/>
+        </Grid>
+    </Border>
+</Window>

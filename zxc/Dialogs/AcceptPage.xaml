@@ -1,0 +1,35 @@
+﻿<Window x:Class="zxc.Dialogs.AcceptPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zxc.Dialogs"
+        mc:Ignorable="d"
+        Title="ProfileDialog" Height="150" Width="500"
+         Background="Transparent"
+        ResizeMode="NoResize" AllowsTransparency="True" 
+        WindowStyle="None" WindowStartupLocation="CenterScreen" PreviewKeyDown="Window_PreviewKeyDown">
+    <Border CornerRadius="20" BorderThickness="1" BorderBrush="Red">
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#1C1C1C" Offset="0.0"/>
+                <GradientStop Color="#000000" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Label Style="{StaticResource CustomFont2}" Content="Вы действительно хотите сохранить изменения" 
+                   HorizontalAlignment="Center" Margin="0,30,0,0"
+                   FontSize="23" Foreground="White" Name="label"/>
+            <Button Style="{StaticResource RoundButton}"
+                            FontStyle="Normal" IsDefault="True"
+                            Foreground="White" BorderThickness="2"
+                            BorderBrush="White" Width="100"
+                            Height="40" Content="Да" FontWeight="Normal" FontFamily="Segoe UI" FontSize="20" Margin="0,70,150,0" Click="Button_Click" />
+            <Button Style="{StaticResource RoundButton}"
+                            FontStyle="Normal" IsDefault="True"
+                            Foreground="White" BorderThickness="2"
+                            BorderBrush="White" Width="100" IsCancel="True"
+                            Height="40" Content="Нет" FontWeight="Normal" FontFamily="Segoe UI" FontSize="20" Margin="150,70,0,0" Click="Button_Click_1"/>
+        </Grid>
+    </Border>
+</Window>

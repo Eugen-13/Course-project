@@ -1,0 +1,118 @@
+﻿<Window x:Class="zxc.UserForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zxc"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="AdminForm" Height="500" Width="800"
+        Background="Transparent"
+        ResizeMode="NoResize" AllowsTransparency="True" 
+        WindowStyle="None" WindowStartupLocation="CenterScreen"  Icon="/icon.png">
+    <Window.Resources>
+        <Style x:Key="icons" TargetType="iconPacks:PackIconMaterial">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+
+        </Style>
+        <Style x:Key="menuButtons"
+               BasedOn="{StaticResource {x:Type ToggleButton}}"
+               TargetType="RadioButton">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Grid Background="{TemplateBinding Background}"
+                                  VerticalAlignment="Stretch"
+                                  HorizontalAlignment="Stretch">
+                                <StackPanel Orientation="Horizontal">
+                                    <iconPacks:PackIconMaterial
+                                    Style="{StaticResource icons}"
+                                    Kind="Account" Loaded="PackIconMaterial_Loaded" />
+                                    <TextBlock FontSize="20"
+                                           Text="{TemplateBinding Property=Content}"
+                                           Foreground="White"
+                                           Style="{StaticResource CustomFont2}"
+                                           VerticalAlignment="Center"
+                                            Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="About" Background="Black" Foreground="White" Click="MenuItem_Click"/>
+            <MenuItem Header="Help" Background="Black" Foreground="White" Click="MenuItem_Click_1"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="30" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#1C1C1C" Offset="0.0"/>
+                    <GradientStop Color="#000000" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Label VerticalAlignment="Top" 
+                   HorizontalContentAlignment="Center" 
+                   Style="{StaticResource CustomFont}"
+                   FontSize="50" Content="ZXC" 
+                   Foreground="White"/>
+        <Label Margin="0,45,0,0" Grid.RowSpan="2"
+                   HorizontalContentAlignment="Center"
+                   FontSize="30" Content="Game club"
+                   Foreground="Red" FontFamily="Monotype Corsiva"/>
+        <Label Name="time1" Content="00:00" Margin="5,0,0,10"
+               FontSize="15" Foreground="White" VerticalContentAlignment="Bottom"
+               VerticalAlignment="Bottom"  Style="{StaticResource CustomFont2}" Grid.Row="1" HorizontalAlignment="Center"/>
+        <!--<iconPacks:PackIconMaterial Foreground="White" Width="100" Height="100" Kind="CubeOutline" Margin="134,10,0,0"/>-->
+
+        <Label  Content="User menu" Style="{StaticResource CustomFont}"
+               FontSize="50" Foreground="White" 
+               HorizontalAlignment="Center" VerticalAlignment="Center" 
+               Grid.ColumnSpan="2" Grid.Row="0"/>
+        <Label Name="time" Content="00:00" Margin="0,14,25,0"
+               FontSize="40" Foreground="White" VerticalContentAlignment="Bottom"
+               VerticalAlignment="Top"  Style="{StaticResource CustomFont2}"
+               Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Grid.RowSpan="2"/>
+
+        <StackPanel VerticalAlignment="Center" Margin="0,30,0,30" Grid.Row="1">
+            <RadioButton Name="startPage" Style="{StaticResource menuButtons}" GroupName="menu" Content="Профиль" Checked="Page1"/>
+            <RadioButton Style="{StaticResource menuButtons}" GroupName="menu" Content="Мои заявки" Checked="Page2"/>
+            <RadioButton Style="{StaticResource menuButtons}" GroupName="menu" Content="Места" Checked="Page3"/>
+            <!--<RadioButton  Visibility="Hidden" Style="{StaticResource menuButtons}" GroupName="menu" Content="Места" Checked="Page1"/>-->
+            <RadioButton Style="{StaticResource menuButtons}" GroupName="menu" Content="Печать" Checked="SettingsPage"/>
+            <RadioButton Style="{StaticResource menuButtons}" GroupName="menu" Content="Выход" Checked="Exit"/>
+        </StackPanel>
+        <Frame Margin="10" Background="Transparent"  NavigationUIVisibility="Hidden" x:Name="Main"  Grid.Column="2" Grid.Row="2">
+        </Frame>
+    </Grid>
+</Window>

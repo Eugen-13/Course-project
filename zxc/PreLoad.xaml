@@ -1,0 +1,38 @@
+﻿<Window x:Class="zxc.PreLoad"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zxc"
+        mc:Ignorable="d"
+        Title="PreLoad"  Height="300" Width="350"
+        Background="Transparent" 
+        ResizeMode="NoResize" AllowsTransparency="True" 
+        WindowStyle="None" WindowStartupLocation="CenterScreen"  Icon="/icon.png">
+    <Grid>
+        <Border CornerRadius="30" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#1C1C1C" Offset="0.0"/>
+                    <GradientStop Color="#000000" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Label Content="Loading..." Margin="107,224,0,0"
+               FontSize="40" Foreground="White" VerticalContentAlignment="Bottom"
+               VerticalAlignment="Top"  Style="{StaticResource CustomFont2}" Grid.Row="0" HorizontalAlignment="Left"/>
+        <Label Name="procent" Content="0" Margin="0,150,0,0"
+               FontSize="40" Foreground="White" VerticalContentAlignment="Bottom"
+               VerticalAlignment="Top"  Style="{StaticResource CustomFont2}" Grid.Row="0" HorizontalAlignment="Center"/>
+        <Label VerticalAlignment="Top" HorizontalContentAlignment="Center" Style="{StaticResource CustomFont}" FontSize="80" Content="ZXC" Foreground="White" Margin="71,9,53,0"></Label>
+        <Label VerticalAlignment="Top" HorizontalContentAlignment="Center" FontSize="50" Content="Game club" Foreground="Red" FontFamily="Monotype Corsiva" Margin="0,84,0,0"/>
+        <ProgressBar x:Name="progres" Background="Transparent" Value="0" Height="20" Width="300" Margin="34,204,16,76">
+            <ProgressBar.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Red"/>
+                    <GradientStop Color="#FF360000" Offset="1"/>
+                </LinearGradientBrush>
+            </ProgressBar.Foreground>
+        </ProgressBar>
+    </Grid>
+</Window>

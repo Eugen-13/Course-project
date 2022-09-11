@@ -1,0 +1,263 @@
+﻿<Window x:Class="zxc.AdminFormPages.EditUsersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:zxc"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="700"
+        Background="Transparent" 
+        ResizeMode="NoResize" AllowsTransparency="True" 
+        WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="ToolTip">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="#B2000000"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="CaretBrush" Value="Red"/>
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="MaxLength" Value="32"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="235"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Margin" Value="63,0,0,0"/>
+        </Style>
+        <Style x:Key="tooltips" TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver"  Value="true">
+                    <Setter Property="ToolTip">
+                        <Setter.Value>
+                            <ToolTip Background="Transparent" Foreground="Black"></ToolTip>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Name="mainGrid">
+        <Grid>
+            <Border CornerRadius="30">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#414141" Offset="0.0"/>
+                        <GradientStop Color="#000000" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Calendar Name="calendar" Margin="220,226,-220,-226" Visibility="Hidden"/>
+            </Border>
+            <Button Style="{StaticResource forCloseButton}"
+                    Name="closeButton" Content="x" BorderThickness="0"
+                    Foreground="White"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Margin="19,4,0,0"
+                    Background="Transparent" Height="60"
+                    Width="30" FontSize="40" MouseEnter="closeButton_MouseEnter" MouseLeave="closeButton_MouseLeave"
+                    FontFamily="Consolas" Click="Back">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <TextBlock Text="Выход" Foreground="White" Background="Transparent"/>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <StackPanel Margin="10,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label HorizontalAlignment="Center" Name="qq" FontFamily="Helvetica" VerticalAlignment="Top" Foreground="White" FontWeight="Light" FontSize="40" Content="Добавление нового пользователя" Height="55"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,80,0,0">
+                <StackPanel x:Name="stackp" Width="350" VerticalAlignment="Top">
+                    <StackPanel Margin="0,50,0,0" Orientation="Horizontal">
+                        <TextBox Name="UserTextBox" GotFocus="UserTextBox_GotFocus" LostFocus="UserTextBox_LostFocus" 
+                             Text="Имя пользователя">
+                            <TextBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="Введите ваше имя пользователя: (4-32 символа)" Foreground="White" Background="Transparent"/>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        <iconPacks:PackIconMaterial Margin="5,0,0,0" Kind="Account" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                    </StackPanel>
+                    <Border HorizontalAlignment="Left" Margin="50,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    <StackPanel Margin="0,20,0,0" Orientation="Horizontal">
+                        <TextBox MaxLength="50" Name="EmailTextBox" GotFocus="UserTextBox_GotFocus" LostFocus="UserTextBox_LostFocus" 
+                             Text="Email">
+                            <TextBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="Введите ваш адрес электронной почты: " Foreground="White" Background="Transparent"/>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        <iconPacks:PackIconMaterial Margin="5,0,0,0" Kind="EmailOutline" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                    </StackPanel>
+                    <Border HorizontalAlignment="Left" Margin="50,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    <StackPanel Orientation="Horizontal"  Margin="0,20,0,0">
+                        <TextBox Name="PassTextBox1" FontFamily="Helvetica"
+                             FontWeight="Light"
+                             Text="Password" MaxLength="32"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="63,0,0,0"  GotFocus="UserTextBox_GotFocus" LostFocus="UserTextBox_LostFocus">
+                            <TextBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="Введите ваш пароль: (4-32 символа)" Foreground="White" Background="Transparent"/>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        <iconPacks:PackIconMaterial Margin="5,0,0,0" Kind="FormTextboxPassword" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                    </StackPanel>
+                    <Border HorizontalAlignment="Left" Margin="50,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    <Button Name="button" Style="{StaticResource RoundButton}"
+                            Margin="0,30,0,0" FontStyle="Normal"
+                            Foreground="White" BorderThickness="2"
+                            BorderBrush="White" Width="100" IsDefault="True"
+                            Height="40" Content="Change" FontWeight="Normal" FontFamily="Segoe UI" FontSize="14" Click="Button_Click"/>
+                </StackPanel>
+                <StackPanel Width="350">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox Name="SurnameTextBox" GotFocus="UserTextBox_GotFocus" LostFocus="UserTextBox_LostFocus"
+                             Text="Фамилия">
+                            <TextBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="Введите вашу фамилию: " Foreground="White" Background="Transparent"/>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        <iconPacks:PackIconMaterial Margin="5,0,0,0" Kind="TextAccount" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                    </StackPanel>
+                    <Border HorizontalAlignment="Left" Margin="50,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                        <TextBox Name="NameTextBox"  GotFocus="UserTextBox_GotFocus" LostFocus="UserTextBox_LostFocus"
+                             Text="Имя">
+                            <TextBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="Введите ваше имя: " Foreground="White" Background="Transparent"/>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        <iconPacks:PackIconMaterial Margin="5,0,0,0" Kind="TextAccount" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                    </StackPanel>
+                    <Border HorizontalAlignment="Left" Margin="50,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    <StackPanel Orientation="Horizontal"  Margin="0,20,0,0">
+                        <TextBox Name="SNameTextBox" GotFocus="UserTextBox_GotFocus" LostFocus="UserTextBox_LostFocus"
+                             Text="Отчество">
+                            <TextBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="Введите ваше отчество: " Foreground="White" Background="Transparent"/>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        <iconPacks:PackIconMaterial Margin="5,0,0,0" Kind="TextAccount" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                    </StackPanel>
+                    <Border HorizontalAlignment="Left" Margin="50,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    <StackPanel Orientation="Horizontal"  Margin="0,20,0,0">
+                        <TextBox Name="DateTextBox" GotFocus="UserTextBox_GotFocus" LostFocus="UserTextBox_LostFocus"
+                             Text="Дата рождения">
+                            <TextBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="Введите вашу дату рождения: (yyyy.mm.dd)" Foreground="White" Background="Transparent"/>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        <iconPacks:PackIconMaterial Margin="5,0,0,0" Kind="CalendarMonthOutline" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                    </StackPanel>
+                    <Border HorizontalAlignment="Left" Margin="50,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    <StackPanel Orientation="Horizontal"  Margin="0,20,0,0">
+                        <TextBox Name="TelephoneTextBox" GotFocus="UserTextBox_GotFocus" LostFocus="UserTextBox_LostFocus"
+                             Text="Номер телефона">
+                            <TextBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="Введите ваш номер телефон: (+375xxxxxxxxx)" Foreground="White" Background="Transparent"/>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        <iconPacks:PackIconMaterial Margin="5,0,0,0" Kind="Cellphone" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                    </StackPanel>
+                    <Border HorizontalAlignment="Left" Margin="50,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                    <StackPanel Orientation="Horizontal"  Margin="0,20,0,0">
+                        <TextBox Name="AdresTextBox" GotFocus="UserTextBox_GotFocus" LostFocus="UserTextBox_LostFocus"
+                             Text="Домашний адрес">
+                            <TextBox.ToolTip>
+                                <ToolTip>
+                                    <TextBlock Text="Введите ваш домашний адрес: " Foreground="White" Background="Transparent"/>
+                                </ToolTip>
+                            </TextBox.ToolTip>
+                        </TextBox>
+                        <iconPacks:PackIconMaterial Margin="5,0,0,0" Kind="Home" 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Center" 
+                                                Foreground="White"/>
+                    </StackPanel>
+                    <Border HorizontalAlignment="Left" Margin="50,0,0,0" Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>
+
